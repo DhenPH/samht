@@ -1,4 +1,4 @@
 User-agent: *
-disallow: /
+allow: /
 
 Sitemap: https://web.temporalrealms.online/sitemap.xml

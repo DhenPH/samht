@@ -180,7 +180,7 @@ body, html {height: 100%}
 .dropup {
   position: absolute;
   display: inline-block;
-  bottom:10px;
+  bottom:70px;
   left:50%;
   transform:translate(-50%,0%);
   z-index:998;

@@ -1,13 +1,4 @@
-User-agent: Googlebot
-Disallow:
- 
-User-agent: bingbot
-Disallow:
- 
-User-agent: msnbot
-Disallow:
- 
 User-agent: *
-Disallow: /
+disallow: /
 
 Sitemap: https://web.temporalrealms.online/sitemap.xml

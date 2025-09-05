@@ -272,11 +272,11 @@ body, html {height: 100%}
   background-color: #555555; /* Green */
   border: none;
   color: white;
-  padding: 16px 60px;
+  padding: 30px 60px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 18px;
   margin: 20px;
   transition-duration: 0.4s;
   cursor: pointer;

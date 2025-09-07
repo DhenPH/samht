@@ -298,6 +298,7 @@ body, html {height: 100%}
         text-align: center;
         color:black;
         padding-top:30px;
+		padding-bottom:50px;
     }
     .hcaptions, .hcaptions h1{
         font-family: 'Minecraft', sans-serif;
@@ -305,7 +306,6 @@ body, html {height: 100%}
         font-weight:1;
         text-align: center;
         color:white;
-        padding-bottom:50px;
         padding-top:30px;
         text-shadow: 1px 1px black;
     }

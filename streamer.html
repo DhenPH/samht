@@ -46,13 +46,12 @@
           <h1>TEMPORAL REALMS STREAMERS</h1>
         </div>
         <div class="flex-streamer">
-            <div class="streamer-item">
+            <div class="streamer-item" onlick="clickapply()">
               <div class="streamer-pic"></div>
               <div class="streamer-name">Apply as Streamer</div>
               <div class="streamer-info">Join as we Grow</div>
               <div class="streamer-follow">Apply Now</div>
             </div>
-            
         </div>
         <div class="streamer-cap">
           <p class="ccomments">Support your favorite Temporal Realms streamers! Discover new creators, join their adventures, and help them grow inside the Realms.</p>
@@ -67,61 +66,62 @@
       </div>
     </footer>
     <script>
+		function clickapply(){
+        	alert("File a Ticket at Discord");
+      	}
 		var audio = new Audio('bg.mp3');
 		audio.loop = true;
 		audio.play();
         fetch('https://api.mcsrvstat.us/3/temporalrealms.online')
 			.then(res => res.text())
-			.then(rep => {
-    let xdata = JSON.parse(rep);
-    let playercount = xdata.players.online;
-            document.getElementById("onlineplayer").innerText = playercount + " Online";
-            document.getElementById("staticon").style.color = "#ffd900";
-	})
+				.then(rep => {
+    				let xdata = JSON.parse(rep);
+    				let playercount = xdata.players.online;
+            		document.getElementById("onlineplayer").innerText = playercount + " Online";
+            		document.getElementById("staticon").style.color = "#ffd900";
+				})
     var thissheetnamexx = "Streamers"
 	var SHEET_ID = "18ePmktxWGmbAwDUDUnpRViakVFczr1DwgQIBNA2reQU"
 	var SHEET_RANGE = "A2:A"
 	let FULL_URL = ('https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?sheet=' + thissheetnamexx + '&range=' + SHEET_RANGE);
-			fetch(FULL_URL)
-			.then(res => res.text())
+	fetch(FULL_URL)
+		.then(res => res.text())
 			.then(rep => {
-    let data = JSON.parse(rep.substr(47).slice(0,-2));
-    let plength = data.table.rows.length;
-    let pcount = plength + 1;
-    let ttcount = 0;
-    var regex = /[a-zA-Z0-9]/g;
-	try{
-    for(let i = 0; i < plength; i++){
-      var datastreamername = data.table.rows[i].c[0].v;
-      const newitem = document.createElement('div');
-      const tiktokblock = document.createElement('blockquote');
-      const tiktoksection = document.createElement('section');
-      const tiktoklink = document.createElement('a');
-      tiktoklink.textContent = "@" + datastreamername;
-      tiktoklink.setAttribute('target', '_blank');
-      tiktoklink.setAttribute('href', 'https://www.tiktok.com/@' + datastreamername + '?refer=creator_embed');
-      newitem.className = "streamer-item";
-      tiktokblock.className ="tiktok-embed";
-      tiktokblock.setAttribute('cite', 'https://www.tiktok.com/@' + datastreamername);
-      tiktokblock.setAttribute('data-unique-id', datastreamername);
-      tiktokblock.setAttribute('data-embed-type', 'creator');
-      tiktokblock.setAttribute('style', 'max-width: 300px; min-width: 288px;');
-      newitem.id = "streamer" + i;
-      document.getElementsByClassName("flex-streamer")[0].appendChild(newitem);
-      const itemholder = document.getElementById("streamer" + i);
-      itemholder.appendChild(tiktokblock);
-      tiktokblock.appendChild(tiktoksection);
-      tiktoksection.appendChild(tiktoklink);
-    }
-
-    const tiktokjs = document.createElement('script');
-    tiktokjs.setAttribute('async','');
-    tiktokjs.setAttribute('src','https://www.tiktok.com/embed.js');
-    document.getElementsByTagName("body")[0].appendChild(tiktokjs);
-    
-	}
-	catch(err){}
-	})
+    			let data = JSON.parse(rep.substr(47).slice(0,-2));
+    			let plength = data.table.rows.length;
+    			let pcount = plength + 1;
+    			let ttcount = 0;
+    			var regex = /[a-zA-Z0-9]/g;
+				try{
+    				for(let i = 0; i < plength; i++){
+      					var datastreamername = data.table.rows[i].c[0].v;
+      					const newitem = document.createElement('div');
+      					const tiktokblock = document.createElement('blockquote');
+      					const tiktoksection = document.createElement('section');
+      					const tiktoklink = document.createElement('a');
+      					tiktoklink.textContent = "@" + datastreamername;
+      					tiktoklink.setAttribute('target', '_blank');
+      					tiktoklink.setAttribute('href', 'https://www.tiktok.com/@' + datastreamername + '?refer=creator_embed');
+      					newitem.className = "streamer-item";
+      					tiktokblock.className ="tiktok-embed";
+      					tiktokblock.setAttribute('cite', 'https://www.tiktok.com/@' + datastreamername);
+      					tiktokblock.setAttribute('data-unique-id', datastreamername);
+      					tiktokblock.setAttribute('data-embed-type', 'creator');
+      					tiktokblock.setAttribute('style', 'max-width: 300px; min-width: 288px;');
+      					newitem.id = "streamer" + i;
+      					document.getElementsByClassName("flex-streamer")[0].appendChild(newitem);
+      					const itemholder = document.getElementById("streamer" + i);
+      					itemholder.appendChild(tiktokblock);
+      					tiktokblock.appendChild(tiktoksection);
+      					tiktoksection.appendChild(tiktoklink);
+    					}
+    				const tiktokjs = document.createElement('script');
+    				tiktokjs.setAttribute('async','');
+    				tiktokjs.setAttribute('src','https://www.tiktok.com/embed.js');
+    				document.getElementsByTagName("body")[0].appendChild(tiktokjs);
+				}
+				catch(err){}
+			})
     </script>
 </body>
 </html>

@@ -11,7 +11,7 @@ body, html {height: 100%}
   flex-wrap: wrap;
   font-size: 30px;
   text-align: center;
-  justify-content:space-evenly;
+  justify-content:center;
   gap:30px;
 }
 .streamer-cap{

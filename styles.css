@@ -1,17 +1,63 @@
 body,h1,h2 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
 .bgimg {
-  background-image: linear-gradient(rgba(0,0,0,0.4),70%,#121111), url('bg.png');
+  background-image: url('bg.png');
   background-position: center;
   background-size: cover;
   height:100vh;
 }
-    .maintitle{
+.flex-streamer {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 30px;
+  text-align: center;
+  justify-content:space-evenly;
+  gap:30px;
+}
+.streamer-cap{
+  margin-top: 100px;
+}
+.streamer-pic{
+  height: 300px;
+  width: 300px;
+  background: url('applystreamer.svg');
+  background-size: cover;
+  border-radius: 100%;
+}
+.streamer-name{
+  font-size: 25px;
+}
+.streamer-info{
+  font-size:20px;
+}
+.streamer-item {
+  background-color: rgba(0,0,0,0.4);
+  padding: 5px 5px 5px 5px;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px 0px rgba(255, 255,255, 0.1);
+  color:white;
+  font-family:'SF Pixelate', sans-serif;
+  text-shadow: 1px 1px black;
+}
+.maintitle{
+  font-family: 'Minecraft', sans-serif;
+  font-size: 25px;
+  font-weight:1;
+  text-align: center;
+  color:white;
+}
+    .hcaption h1{
         font-family: 'Minecraft', sans-serif;
-        font-size: 25px;
+        font-size: 50px;
         font-weight:1;
         text-align: center;
-        color:white;
+        color:whitesmoke;
+        margin:0px;
+        text-shadow: 1px 1px black;
+    }
+    main{
+      min-height: 100vh;
     }
     .ctitle{
         font-family: 'Minecraft', sans-serif;
@@ -40,7 +86,10 @@ body, html {height: 100%}
         width:100%;
         position:fixed;
         z-index:999;
-        
+    }
+    .content{
+      padding-top:40px;
+      position: relative;
     }
     .dropbtn {
   background-color: #4CAF50;
@@ -153,12 +202,44 @@ body, html {height: 100%}
     flex-direction: column;
   }
 }
+.vwrapper{
+  background: rgba(0,0,0,0.6);
+  width:100% ;
+  height: 100%;
+  position: fixed;
+}
+.video-container {
+      position: fixed;
+      width: 100%;
+      height: 100vh; 
+      overflow: hidden;
+      display: flex;
+      justify-content: center; 
+      align-items: center;
+    }
+
+    .video-container video {
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: cover; /* Fills the container, may be cropped */
+      position: absolute; /* Position it within the container */
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /* Center precisely */
+    }
     .ccomments{
         font-family: 'SF Pixelate', sans-serif;
         text-align: center;
         color:#bdbdbd;
         font-size:10px;
         font-size: 2.5vh;
+        background: rgba(0,0,0,0.5);
+        margin-left:5px;
+        margin-right: 5px;
+        padding: 20px;
+        border-radius: 10px;
     }
     .maincontent{
         background-color: white;
@@ -219,7 +300,7 @@ body, html {height: 100%}
         padding-bottom:50px;
         padding-top:30px;
     }
-    .hcaptions{
+    .hcaptions, .hcaptions h1{
         font-family: 'Minecraft', sans-serif;
         font-size: 50px;
         font-weight:1;
@@ -227,18 +308,12 @@ body, html {height: 100%}
         color:white;
         padding-bottom:50px;
         padding-top:30px;
+        text-shadow: 1px 1px black;
     }
- .hcaptions h1{
-        font-family: 'Minecraft', sans-serif;
-        font-size: 50px;
-        font-weight:1;
-        text-align: center;
-        color:white;
-    }
-
     .gcontent{
         background-color:#ebebeb;
         width:100%;
+        text-shadow: 1px 1px black;
     }
     .gcontents{
         background-color:#121111;
@@ -256,6 +331,7 @@ body, html {height: 100%}
         text-align:center;
         font-family: 'SF Pixelate', sans-serif;
         font-weight:700;
+        text-shadow: 1px 1px black;
     }
     .ipadd{
         font-family: 'SF Pixelate', sans-serif;
@@ -265,6 +341,7 @@ body, html {height: 100%}
         padding-right:10px;
         padding-top:5px;
         padding-bottom:5px;
+        text-shadow: 1px 1px black;
     }
     .button5:hover {
   background-color: white;
@@ -275,6 +352,7 @@ body, html {height: 100%}
 .button5 {
   background-color: #555555;
   color: white;
+  text-shadow: 1px 1px black;
 }
     .buttonx {
   background-color: #555555; /* Green */
@@ -290,10 +368,12 @@ body, html {height: 100%}
   cursor: pointer;
   font-family: 'SF Pixelate', sans-serif;
   font-weight:700;
+  text-shadow: 1px 1px black;
 }
     #staticon{
         color:#919191;
         margin-left:10px;
+        text-shadow: 1px 1px black;
     }
     #onlineplayer{
         font-weight:700;

@@ -51,6 +51,7 @@
               <div class="streamer-info">Join as we Grow</div>
               <div class="streamer-follow">Apply Now</div>
             </div>
+            
         </div>
         <div class="streamer-cap">
           <p class="ccomments">Support your favorite Temporal Realms streamers! Discover new creators, join their adventures, and help them grow inside the Realms.</p>
@@ -87,31 +88,33 @@
     var regex = /[a-zA-Z0-9]/g;
 	try{
     for(let i = 0; i < plength; i++){
-      var datastreamername = data.table.rows[i].c[0].v
+      var datastreamername = data.table.rows[i].c[0].v;
       const newitem = document.createElement('div');
-      const streamerpic = document.createElement('div');
-      const streamername = document.createElement('div');
-      const streamerinfo = document.createElement('div');
-      const streamerfollow = document.createElement('div');
+      const tiktokblock = document.createElement('blockquote');
+      const tiktoksection = document.createElement('section');
+      const tiktoklink = document.createElement('a');
+      tiktoklink.textContent = "@" + datastreamername;
+      tiktoklink.setAttribute('target', '_blank');
+      tiktoklink.setAttribute('href', 'https://www.tiktok.com/@' + datastreamername + '?refer=creator_embed');
       newitem.className = "streamer-item";
-      streamerpic.className ="streamer-pic";
-      streamername.className ="streamer-name";
-      streamerinfo.className ="streamer-info";
-      streamerfollow.className ="streamer-follow";
+      tiktokblock.className ="tiktok-embed";
+      tiktokblock.setAttribute('cite', 'https://www.tiktok.com/@' + datastreamername);
+      tiktokblock.setAttribute('data-unique-id', datastreamername);
+      tiktokblock.setAttribute('data-embed-type', 'creator');
+      tiktokblock.setAttribute('style', 'max-width: 300px; min-width: 288px;');
       newitem.id = "streamer" + i;
-      streamername.textContent = datastreamername;
       document.getElementsByClassName("flex-streamer")[0].appendChild(newitem);
       const itemholder = document.getElementById("streamer" + i);
-      itemholder.appendChild(streamerpic);
-      itemholder.appendChild(streamername);
-      itemholder.appendChild(streamerinfo);
-      itemholder.appendChild(streamerfollow);
-      fetch(datastreamername).then(response =>{
-        if (!response.ok){
-          alert(response.text());
-        }
-      })
+      itemholder.appendChild(tiktokblock);
+      tiktokblock.appendChild(tiktoksection);
+      tiktoksection.appendChild(tiktoklink);
     }
+
+    const tiktokjs = document.createElement('script');
+    tiktokjs.setAttribute('async','');
+    tiktokjs.setAttribute('src','https://www.tiktok.com/embed.js');
+    document.getElementsByTagName("body")[0].appendChild(tiktokjs);
+    
 	}
 	catch(err){}
 	})

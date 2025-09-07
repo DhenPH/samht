@@ -37,9 +37,6 @@
     </header>
     <main>
       <div class="video-container">
-		<audio loop autoplay id="bgmusic">
-  			<source src="bg.mp3" type="audio/mpeg">
-		</audio>
       <video autoplay muted loop>
         <source src="bg.mp4" type="video/mp4">
         </video>
@@ -70,7 +67,9 @@
       </div>
     </footer>
     <script>
-		document.getElementById('bgmusic').play();
+		var audio = new Audio('bg.mp3');
+		audio.loop = true;
+		audio.play();
         fetch('https://api.mcsrvstat.us/3/temporalrealms.online')
 			.then(res => res.text())
 			.then(rep => {

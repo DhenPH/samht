@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Temporal Realms</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.cdnfonts.com/css/sf-pixelate" rel="stylesheet">
+<link rel="icon" href="slogo.png">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-image: url('bg.png');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+    .maintitle{
+        font-family: 'Minecraft', sans-serif;
+        font-size: 25px;
+        font-weight:1;
+        text-align: center;
+        color:white;
+    }
+    .ctitle{
+        font-family: 'Minecraft', sans-serif;
+        text-align: center;
+        color:black;
+    }
+    .comment{
+        font-family: 'Minecraft', sans-serif;
+        text-align: center;
+        color:white;
+    }
+    .ccomment{
+        font-family: 'SF Pixelate', sans-serif;
+        text-align: center;
+        color:#4f4f4f;
+        font-weight:700;
+    }
+    .mlogo{
+        height:120px;
+    }
+    .slogo{
+        height:30px;
+    }
+    #header{
+        background-color:rgba(0, 0, 0, 0.8);
+        width:100%;
+        position:fixed;
+        z-index:999;
+        
+    }
+    .dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: absolute;
+  right:10px;
+  top:5px;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 0;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: black;
+}
+    .btn {
+  background-color: #303030;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: black;
+}
+    * {
+  box-sizing: border-box;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-item {
+  padding: 10px;
+  flex: 50%;
+  margin:10px;
+  margin-bottom:40px;
+  text-align:center;
+}
+    .flex-itemx {
+  padding: 10px;
+  flex: 50%;
+  margin:10px;
+  margin-bottom:40px;
+  text-align:left;
+}
+.flex-itemjava {
+  padding: 10px;
+  flex: 50%;
+  margin:10px;
+  margin-bottom:40px;
+  text-align:left;
+}
+.flex-itembedrock {
+  padding: 10px;
+  flex: 50%;
+  margin:10px;
+  margin-bottom:40px;
+  text-align:right;
+}
+.flex-xitembedrock {
+  padding: 10px;
+  flex: 50%;
+  margin:10px;
+  margin-bottom:40px;
+  text-align:left;
+}
+/* Responsive layout - makes a one column-layout instead of two-column layout */
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+    .ccomments{
+        font-family: 'SF Pixelate', sans-serif;
+        text-align: center;
+        color:#d4d4d4;
+        font-size:10px;
+        font-size: 2.5vh;
+    }
+    .maincontent{
+        background-color: white;
+    }
+    .fimg{
+        height:250px;
+        display: block;
+  		margin-left: auto;
+  		margin-right: auto;
+    }
+    .dropbtnup {
+  background-color: white;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropup {
+  position: absolute;
+  display: inline-block;
+  bottom:10px;
+  left:50%;
+  transform:translate(-50%,0%);
+  z-index:998;
+}
+
+.dropup-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  bottom: 50px;
+  z-index: 1;
+}
+
+.dropup-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropup-content a:hover {background-color: #ccc}
+
+.dropup:hover .dropup-content {
+  display: block;
+}
+
+.dropup:hover .dropbtnup {
+  background-color: #969696;
+}
+    .hcaption{
+        font-family: 'Minecraft', sans-serif;
+        font-size: 50px;
+        font-weight:1;
+        text-align: center;
+        color:black;
+        padding-bottom:50px;
+        padding-top:30px;
+    }
+    .hcaptions{
+        font-family: 'Minecraft', sans-serif;
+        font-size: 50px;
+        font-weight:1;
+        text-align: center;
+        color:white;
+        padding-bottom:50px;
+        padding-top:30px;
+    }
+    .gcontent{
+        background-color:#ebebeb;
+        width:100%;
+    }
+    .gcontents{
+        background-color:#121111;
+        width:100%;
+    }
+    .footer{
+        background-color:black;
+        width:100%;
+    }
+    .footercaption{
+        padding-top:90px;
+        padding-bottom:10px;
+        color:white;
+        text-align:center;
+        font-family: 'SF Pixelate', sans-serif;
+        font-weight:700;
+    }
+    .ipadd{
+        font-family: 'SF Pixelate', sans-serif;
+        color:white;
+        background-color:black;
+        padding-left:10px;
+        padding-right:10px;
+        padding-top:5px;
+        padding-bottom:5px;
+    }
+    .button5:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+}
+
+.button5 {
+  background-color: #555555;
+  color: white;
+}
+    .buttonx {
+  background-color: #555555; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  font-family: 'SF Pixelate', sans-serif;
+  font-weight:700;
+}
+    #staticon{
+        color:#919191;
+        margin-left:10px;
+    }
+    #onlineplayer{
+        font-weight:700;
+        font-family: 'SF Pixelate', sans-serif;
+        font-size:20px;
+    }
+    #myVideo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+    #container {
+	width: 100%;
+	height: auto;
+}
+
+.row {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 40px;
+	border-bottom: 1px solid #AFAFAF;
+}
+
+.name1 {
+	position: relative;
+	display: inline-block;
+	line-height: 45px;
+    width: 75%;
+}
+.name2 {
+	position: relative;
+	display: inline-block;
+	line-height: 45px;
+    width: 75%;
+}.name3 {
+	position: relative;
+	display: inline-block;
+	line-height: 45px;
+    width: 75%;
+}.name4 {
+	position: relative;
+	display: inline-block;
+	line-height: 45px;
+    width: 75%;
+}.name5 {
+	position: relative;
+	display: inline-block;
+	line-height: 45px;
+    width: 75%;
+}
+.score1 {
+	position: relative;
+	display: inline-block;
+	width: 25%;
+}.score2 {
+	position: relative;
+	display: inline-block;
+	width: 25%;
+}.score3 {
+	position: relative;
+	display: inline-block;
+	width: 25%;
+}.score4 {
+	position: relative;
+	display: inline-block;
+	width: 25%;
+}.score5 {
+	position: relative;
+	display: inline-block;
+	width: 25%;
+}
+</style>
+</head>
+<body>
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge" id="header">
+      <img src="slogo.png" class="slogo"><span id="staticon">■ <b id="onlineplayer">Checking...</b></span>
+      <div class="dropdown">
+  <button class="btn"><i class="fa fa-bars"></i></button>
+  <div class="dropdown-content">
+    <a href="https://discord.gg/KtA49m8mu9">Discord</a>
+    <a href="#">Shop</a>
+      <a href="#">Streamers</a>
+  </div>
+</div>
+</div>
+    <div class="dropup">
+  <button class="dropbtnup">VOTE LIST</button>
+  <div class="dropup-content">
+    <a href="https://minecraft-mp.com/server-s341820" target="_blank" rel="noopener noreferrer">Vote Link 1</a>
+    <a href="https://minecraft-serverlist.com/server/2474" target="_blank" rel="noopener noreferrer">Vote Link 2</a>
+    <a href="https://minecraftpocket-servers.com/server/130506/" target="_blank" rel="noopener noreferrer">Vote Link 3</a>
+  </div>
+  </div>
+  <div class="w3-display-middle">
+    <img src="logo.png" class="mlogo">
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <p class="comment">try and conquer the realms</p>
+  </div>
+  <div class="w3-display-bottomleft w3-padding-large">
+  </div>
+</div>
+    <div class="gcontents">
+        <div class="hcaptions">
+        TEMPORAL REALMS<br><hr style="width:150px;text-align:center;margin: auto;height: 2px;color:#474747;background-color:#474747;">
+    	</div>
+        <div class="flex-container">
+            <div class="flex-item"><img src="ceb.png" style="height: auto;max-width: 1000px;width:100%;"></div>
+            <div class="flex-itemjava"><span class="ccomments">Temporal Realms is a Crossplay server that supports Minecraft Java and Bedrock edition.</span>
+                <div class="flex-container">
+                    <div class="flex-itemx"><span class="ccomments">The server also utilize Custom Items, Custom Enchants and Multicurrency Economy that will give a new exciting experience to players.</span></div>
+                    <div class="flex-item"><img src="cebs.png" style="height: auto;max-width: 1000px;width:100%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gcontent">
+        <div class="hcaption">
+        MONTHLY SPENDER<br><hr style="width:150px;text-align:center;margin: auto;height: 2px;color:#474747;background-color:#474747;">
+    	</div>
+        <div class="flex-container">
+            <div class="flex-item"><img src="top.jpg" style="height: auto;max-width: 1000px;width:100%;"></div>
+            <div class="flex-xitembedrock">
+                <div id="container">
+    <div class="row">
+        <div class="name1" id="name1">Player1</div><div class="score1" id="val1">0</div>
+    </div>
+    
+    <div class="row">
+        <div class="name2" id="name2">Player2</div><div class="score2" id="val2">0</div>
+    </div>
+    
+    <div class="row">
+        <div class="name3" id="name3">Player3</div><div class="score3" id="val3">0</div>
+    </div>
+    
+    <div class="row">
+        <div class="name4" id="name4">Player4</div><div class="score4" id="val4">0</div>
+    </div>
+    
+    <div class="row">
+        <div class="name5" id="name5">Player5</div><div class="score5" id="val5">0</div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+    <div class="hcaption">
+        ABOUT SERVER<br><hr style="width:150px;text-align:center;margin: auto;height: 2px;color:#474747;background-color:#474747;">
+    </div>
+	<div class="maincontent">
+		<div class="flex-container">
+  			<div class="flex-item"><img class="fimg" src="test.png"><br><center><h2 class="ctitle">Multi-World</h2><span class="ccomment">Multi Worlds with custom levels of mobs that you can loot.</span></center></div>
+  			<div class="flex-item"><img class="fimg" src="anar.jpg"><br><center><h2 class="ctitle">Semi-Anarchy</h2><span class="ccomment">On this server, griffin and raiding is allowed and everyone can kill anyone.</span></center></div>
+  			<div class="flex-item"><img class="fimg" src="pvp.png"><br><center><h2 class="ctitle">Custom PVP</h2><span class="ccomment">A Custom PVP system that puts Killer Tag to the bad guys.</span></center></div>
+		</div>
+    </div>
+    <div class="maincontent">
+		<div class="flex-container">
+  			<div class="flex-item"><img class="fimg" src="party.png"><br><center><h2 class="ctitle">Party System</h2><span class="ccomment">Team Up, Create Party and Build your own massive base with your friends.</span></center></div>
+  			<div class="flex-item"><img class="fimg" src="warp.png"><br><center><h2 class="ctitle">Warp/TPA</h2><span class="ccomment">Dont like to waste time moving around the world using standard methods? — In such cases, tpa/warps perfectly helps out!</span></center></div>
+  			<div class="flex-item"><img class="fimg" src="eco.png"><br><center><h2 class="ctitle">SellGui/Auction</h2><span class="ccomment">SellGui system that allows you to easilly sell loots and unwanted items or Sell Rare items to other players with higher price using Auction House.</span></center></div>
+		</div>
+    </div>
+    <div class="gcontent">
+        <div class="hcaption">
+        HOW TO JOIN?<br><hr style="width:150px;text-align:center;margin: auto;height: 2px;color:#474747;background-color:#474747;">
+    	</div>
+        <div class="flex-container">
+            <div class="flex-item"><img src="java.png" style="height:230px;"></div>
+            <div class="flex-itemjava"><h2 class="ctitle">Java User</h2><span class="ccomment">Join by clicking Multiplayer, click add Server then input the IP below:</span><br><br><span class="ipadd" style="text-align:center;">IP:  Temporalrealms.online</span></div>
+        </div>
+    	<br>
+    	<div class="flex-container">
+            <div class="flex-itembedrock"><h2 class="ctitle">Bedrock User</h2><span class="ccomment">Join by clicking Play, Click Servers, Click add server then put the IP and Port Below.</span><br><br><span class="ipadd" style="text-align:center;">IP:  Temporalrealms.online</span><br><span class="ipadd" style="text-align:center;">PORT:  19132</span></div>
+    		<div class="flex-item"><img src="bedrock.png" style="height:230px;"><br><a href="minecraft:?addExternalServer=§6§1TemporalRealms|temporalrealms.online:19132"><button class="buttonx button5">Click to add Server on Minecraft Bedrock</button></a></div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footercaption">
+           	TEMPORALREALMS 2025 ©
+        </div>
+    </div>
+    <script>
+        fetch('https://api.mcsrvstat.us/3/45.142.28.5:25581')
+			.then(res => res.text())
+			.then(rep => {
+    let xdata = JSON.parse(rep);
+    let playercount = xdata.players.online;
+            document.getElementById("onlineplayer").innerText = playercount + " Online";
+            document.getElementById("staticon").style.color = "Green";
+	})
+    var thissheetnamexx = "topd"
+	var SHEET_ID = "18ePmktxWGmbAwDUDUnpRViakVFczr1DwgQIBNA2reQU"
+	var SHEET_RANGE = "A2:B"
+	let FULL_URL = ('https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?sheet=' + thissheetnamexx + '&range=' + SHEET_RANGE);
+			fetch(FULL_URL)
+			.then(res => res.text())
+			.then(rep => {
+    let data = JSON.parse(rep.substr(47).slice(0,-2));
+    let plength = data.table.rows.length;
+    let pcount = plength + 1;
+    let ttcount = 0;
+    var regex = /[a-zA-Z0-9]/g;
+	var top1 = data.table.rows[0].c[0].v
+    var topm1 = data.table.rows[0].c[1].v
+    document.getElementById("name1").innerHTML = "<img src='don1.png'>"+ "  " +top1;
+    document.getElementById("val1").innerText = topm1;
+	var top2 = data.table.rows[1].c[0].v
+    var topm2 = data.table.rows[1].c[1].v
+    document.getElementById("name2").innerHTML = "<img src='don2.png'>"+ "  " +top2;
+    document.getElementById("val2").innerText = topm2;
+	var top3 = data.table.rows[2].c[0].v
+    var topm3 = data.table.rows[2].c[1].v
+    document.getElementById("name3").innerHTML = "<img src='don3.png'>"+ "  " +top3;
+    document.getElementById("val3").innerText = topm3;
+    var top4 = data.table.rows[3].c[0].v
+    var topm4 = data.table.rows[3].c[1].v
+    document.getElementById("name4").innerText = top4;
+    document.getElementById("val4").innerText = topm4;
+    var top5 = data.table.rows[4].c[0].v
+    var topm5 = data.table.rows[4].c[1].v
+	document.getElementById("name5").innerText = top5;
+    document.getElementById("val5").innerText = topm5;
+	})
+    </script>
+</body>
+</html>

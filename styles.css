@@ -1,5 +1,10 @@
 body,h1,h2 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
+#servergoal{
+	font-family:'SF Pixelate', sans-serif;
+	font-size:25px;
+	margin-top:20px;
+}
 .bgimg {
   background-image:linear-gradient(rgba(0,0,0,0.5) 70%, #121111), url('bg.png');
   background-position: center;

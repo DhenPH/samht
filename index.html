@@ -178,6 +178,9 @@
 	var servergoal = data.table.rows[0].c[2].v
 	if(servergoal > 0){
 		percentgoal = (servergoal/5000) * 100;
+		if(percentgoal > 100){
+			percentgoal = 100;
+		}
 		document.getElementById("goal").style.width = percentgoal+"%";
 	}
 	document.getElementById("servergoal").innerText = "SERVER GOAL " + servergoal + "/5000"

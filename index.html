@@ -102,7 +102,7 @@
 </div>
 				<span id="servergoal">SERVER GOAL 0/5000</span>
     			<div class="progress-bar blue stripes">
-    				<span id="goal" style="width:40%;"></span>
+    				<span id="goal"></span>
     			</div>
 				<p class="ccomment">Thank You for Supporting Our Server<br>We truly appreciate your support! Every contribution helps us grow, improve performance, and deliver a better gaming experience for the entire community.<br><br>Please note that all funds received are non-refundable and are exclusively allocated towards ongoing server development and improvements. Your support helps us maintain and enhance the gaming experience for all players.</p>
             </div>
@@ -165,7 +165,7 @@
 	})
     var thissheetnamexx = "topd"
 	var SHEET_ID = "18ePmktxWGmbAwDUDUnpRViakVFczr1DwgQIBNA2reQU"
-	var SHEET_RANGE = "A2:B"
+	var SHEET_RANGE = "A2:C"
 	let FULL_URL = ('https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?sheet=' + thissheetnamexx + '&range=' + SHEET_RANGE);
 			fetch(FULL_URL)
 			.then(res => res.text())
@@ -175,6 +175,12 @@
     let pcount = plength + 1;
     let ttcount = 0;
     var regex = /[a-zA-Z0-9]/g;
+	var servergoal = data.table.rows[0].c[2].v
+	if(servergoal > 0){
+		percentgoal = (servergoal/5000) * 100;
+		document.getElementById("goal").style.width = percentgoal+"%";
+	}
+	document.getElementById("servergoal").innerText = "SERVER GOAL " + servergoal + "/5000"
 	try{
 		var top1 = data.table.rows[0].c[0].v
     	var topm1 = data.table.rows[0].c[1].v
